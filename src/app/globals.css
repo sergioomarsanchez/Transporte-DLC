@@ -14,6 +14,7 @@
     --background-start-rgb: 0, 0, 0;
     --background-end-rgb: 0, 0, 0;
   }
+  
 }
 
 body {
@@ -29,5 +30,15 @@ body {
 @layer utilities {
   .text-balance {
     text-wrap: balance;
+  }
+  .light-theme {
+    @apply bg-lightBackground text-lightText;
+    transition: 300ms all ease;
+  }
+
+  /* dark-theme.css */
+  .dark-theme {
+    @apply bg-darkBackground text-darkText;
+    transition: 300ms all ease;
   }
 }
