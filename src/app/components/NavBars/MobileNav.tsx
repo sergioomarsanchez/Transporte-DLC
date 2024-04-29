@@ -45,10 +45,10 @@ function MobileNav({
           </Transition.Child>
           <div className="fixed inset-0 overflow-y-auto">
             <div
-              className={`absolute top-10 right-5 z-10 w-[70%] h-fit border-[0.5px] rounded-lg flex flex-col items-center border-primary-600 opacity-[95%] ${
+              className={`absolute top-10 right-5 z-10 w-[70%] h-fit border-[0.5px] rounded-lg flex flex-col items-center border-yellow-600 opacity-[95%] ${
                 theme === "dark"
-                  ? "from-primary-700 to-primary-900 to-70% bg-gradient-to-br"
-                  : "from-primary-400 to-primary-600 to-70% bg-gradient-to-br"
+                  ? "from-yellow-700 to-yellow-900 to-70% bg-gradient-to-br"
+                  : "from-yellow-400 to-yellow-600 to-70% bg-gradient-to-br"
               }`}
             >
               <Transition.Child
@@ -67,9 +67,7 @@ function MobileNav({
                   </div>
                   <Dialog.Title
                     className={`${
-                      theme === "dark"
-                        ? "text-accent-400"
-                        : "text-accent-900"
+                      theme === "dark" ? "text-yellow-400" : "text-yellow-900"
                     } font-bold text-lg pt-5`}
                   >
                     {lang === "es" ? "Menú" : "Menu"}
@@ -82,8 +80,8 @@ function MobileNav({
                             key={element.en}
                             className={`w-full flex items-center justify-center p-2 border-[0.5px] border-transparent cursor-pointer rounded transition-colors active:bg-opacity-70 ${
                               theme === "dark"
-                                ? "active:border-accent active:bg-accent-400 text-darkText active:text-lightText hover:border-accent"
-                                : "active:border-accent-900 active:bg-accent-800 text-lightText active:text-darkText hover:border-accent-900"
+                                ? "active:border-yellow-500 active:bg-yellow-400 text-darkText active:text-lightText hover:border-yellow-500"
+                                : "active:border-yellow-900 active:bg-yellow-800 text-lightText active:text-darkText hover:border-yellow-900"
                             }`}
                           >
                             <a href={element.href}>

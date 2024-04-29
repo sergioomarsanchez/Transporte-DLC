@@ -9,7 +9,7 @@ const ToggleLang = () => {
   return (
     <button
       onClick={toggleLang}
-      className={`p-1 rounded-sm border-[0.5px] border-transparent hover:border-primary transition-all linear w-8 drop-shadow-2xl ${
+      className={`p-1 rounded-sm border-[0.5px] border-transparent hover:border-yellow-500 transition-all linear w-8 drop-shadow-2xl ${
         theme === "dark" ? "text-darkText" : "text-lightText"
       }`}
       style={{

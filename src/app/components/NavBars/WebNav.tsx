@@ -13,10 +13,10 @@ function WebNav() {
           return (
             <li
               key={element.en}
-              className={`w-full flex items-center justify-center p-2 border-[0.5px] border-transparent cursor-pointer rounded transition-colors active:bg-opacity-70 whitespace-nowrap ${
+              className={`w-full flex items-center justify-center p-2 border-[0.5px] border-transparent cursor-pointer rounded transition-all active:bg-opacity-70 whitespace-nowrap ${
                 theme === "dark"
-                  ? "active:border-accent active:bg-accent-400 text-darkText active:text-lightText hover:border-accent"
-                  : "active:border-accent-900 active:bg-accent-800 text-lightText active:text-darkText hover:border-accent-900"
+                  ? "active:border-yellow-500 active:bg-yellow-400 text-darkText active:text-lightText hover:border-yellow-500"
+                  : "active:border-yellow-900 active:bg-yellow-800 text-lightText active:text-darkText hover:border-yellow-900"
               }`}
             >
               <a href={element.href}>

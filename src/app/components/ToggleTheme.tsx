@@ -8,7 +8,7 @@ const ToggleTheme = () => {
   return (
     <button
       onClick={toggleTheme}
-      className={`p-1 rounded-sm border-[0.5px] border-transparent hover:border-primary transition-all linear drop-shadow-lg ${
+      className={`p-1 rounded-sm border-[0.5px] border-transparent hover:border-yellow-500 transition-all linear drop-shadow-lg ${
         theme === "dark" ? "text-darkText" : "text-lightText"
       }`}
       style={{
