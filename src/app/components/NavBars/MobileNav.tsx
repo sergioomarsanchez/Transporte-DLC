@@ -4,6 +4,7 @@ import { Dialog, Transition } from "@headlessui/react";
 import { ThemeContext } from "@/app/context/themeContext";
 import { LangContext } from "@/app/context/langContext";
 import { mobileMenuData as data } from "@/app/data/textData";
+import FrontTruck from "@/app/assests/icons/FrontTruck";
 import ToggleLang from "../ToggleLang";
 import ToggleTheme from "../ToggleTheme";
 
@@ -64,6 +65,12 @@ function MobileNav({
                   <div className="flex absolute top-4 right-4 items-center justify-around transition-none">
                     <ToggleTheme />
                     <ToggleLang />
+                  </div>
+                  <div className="flex absolute top-4 left-4 items-center justify-around transition-none">
+                    <FrontTruck
+                      className="h-8 w-8"
+                      color={theme === "dark" ? "white" : "black"}
+                    />
                   </div>
                   <Dialog.Title
                     className={`${

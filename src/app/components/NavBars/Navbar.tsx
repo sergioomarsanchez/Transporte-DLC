@@ -1,5 +1,5 @@
 "use client";
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import Image from "next/image";
 import WebNav from "./WebNav";
 import logo from "@/app/assests/brandImgs/Logo-noBG.png";
@@ -12,18 +12,31 @@ import ToggleLang from "../ToggleLang";
 function Navbar() {
   const { theme } = useContext(ThemeContext);
   const [isOpen, setIsOpen] = useState(false);
+  const [isScrolling, setIsScrolling] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolling(window.scrollY > 110);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   return (
     <div
-      className={`flex items-center justify-between h-24 relative ${
-        theme === "dark" ? "dark-theme" : "light-theme"
-      }`}
+      className={`flex items-center justify-between sticky top-0 shadow-lg h-20 ${
+        theme === "dark" ? "dark-theme bg-darkBackground/75" : "light-theme bg-lightBackground/75"
+      } ${isScrolling?"opacity-75 hover:opacity-100":""}`}
     >
       <Image
         src={logo}
-        className={`mt-5 hidden md:flex ${theme === "dark" ? "" : "invert"}`}
+        className={`hidden md:flex -translate-y-3 ${theme === "dark" ? "" : "invert"}`}
         alt="logo"
-        width={400}
-        height={200}
+        width={300}
+        height={150}
+        style={{clipPath: "inset(50px 35px 25px 35px)"}}
       />
       <Image
         src={logoSmall}

@@ -2,11 +2,12 @@ import React, { useContext } from "react";
 import { ThemeContext } from "../context/themeContext";
 import Image from "next/image";
 import heroImg from "@/app/assests/img/heroImg.jpeg";
+import { Transition } from "@headlessui/react";
 
 function HeroSection() {
   const { theme } = useContext(ThemeContext);
   return (
-    <div className="md:mx-10 flex flex-col justify-center items-start md:flex-row gap-5 md:gap-0">
+    <div className="md:mx-10 flex flex-col justify-center items-start md:flex-row gap-5 md:gap-0 h-full" id="hero">
       <section className="flex flex-col justify-start items-start">
         <h1 className="font-bold font-serif text-lg md:text-3xl">
           Transporte DLC
