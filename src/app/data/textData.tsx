@@ -2,7 +2,7 @@ export const mobileMenuData = [
   {
     en: "Home",
     es: "Inicio",
-    href: "#hero",
+    href: "#home",
   },
   {
     en: "About Us",

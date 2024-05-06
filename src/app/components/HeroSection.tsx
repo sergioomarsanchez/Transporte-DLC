@@ -7,12 +7,12 @@ import { Transition } from "@headlessui/react";
 function HeroSection() {
   const { theme } = useContext(ThemeContext);
   return (
-    <div className="md:mx-10 flex flex-col justify-center items-start md:flex-row gap-5 md:gap-0 h-full" id="hero">
+    <div className="md:mx-10 flex flex-col justify-center items-start md:flex-row gap-5 md:gap-0 h-full">
       <section className="flex flex-col justify-start items-start">
-        <h1 className="font-bold font-serif text-lg md:text-3xl">
+        <h1 className="font-extrabold font-serif text-2xl md:text-3xl">
           Transporte DLC
         </h1>
-        <p className="my-5">
+        <p className="my-5 text-sm md:text-base">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
           eiusmod tempor incididunt ut labore et dolore magna aliqua.{" "}
         </p>

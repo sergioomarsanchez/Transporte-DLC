@@ -9,14 +9,16 @@ function About() {
   const { lang } = useContext(LangContext);
   const dataLang = lang === "es" ? data.es : data.en;
   return (
-    <div className="p-2 md:p-24" id="about">
-      <h2 className="text-2xl font-extrabold italic my-10">{dataLang.title}</h2>
-      <p>{dataLang.description}</p>
-      <h3 className="text-xl italic my-5">
+    <div className="p-2 md:p-24">
+      <h2 className="text-xl md:text-2xl font-extrabold italic my-10">
+        {dataLang.title}
+      </h2>
+      <p className="text-sm md:text-base">{dataLang.description}</p>
+      <h3 className="text-lg md:text-xl font-bold italic my-5">
         {lang === "es" ? "Nuestra Historia" : "Our History"}
       </h3>
-      <p>{dataLang.history}</p>
-      <h3 className="text-xl italic my-5">
+      <p className="text-sm md:text-base">{dataLang.history}</p>
+      <h3 className="text-lg md:text-xl font-bold italic my-5">
         {lang === "es" ? "Nuestros Valores" : "Our Values"}
       </h3>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 justify-center items-center gap-2 h-fit w-fit">

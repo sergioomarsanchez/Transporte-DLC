@@ -26,9 +26,9 @@ function Navbar() {
 
   return (
     <div
-      className={`flex items-center justify-between sticky top-0 shadow-lg h-20 ${
-        theme === "dark" ? "dark-theme bg-darkBackground/75" : "light-theme bg-lightBackground/75"
-      } ${isScrolling?"opacity-75 hover:opacity-100":""}`}
+      className={`flex items-center justify-between sticky top-0 shadow-lg h-16 md:h-20 ${
+        theme === "dark" ? "dark-theme bg-darkBackground/75 shadow-gray-900" : "light-theme bg-lightBackground/75"
+      } ${isScrolling?"opacity-60 hover:opacity-100":""}`}
     >
       <Image
         src={logo}
@@ -40,7 +40,7 @@ function Navbar() {
       />
       <Image
         src={logoSmall}
-        className={`ml-5 md:hidden flex ${theme === "dark" ? "invert" : ""}`}
+        className={`ml-5 mt-1 md:hidden flex ${theme === "dark" ? "invert" : ""}`}
         alt="logo"
         width={100}
         height={50}
@@ -52,7 +52,7 @@ function Navbar() {
         <ToggleTheme />
         <ToggleLang />
       </div>
-      <div className="md:hidden flex absolute top-6 right-5 items-center justify-around">
+      <div className="md:hidden flex absolute top-3 right-5 items-center justify-around">
         <MobileNav isOpen={isOpen} setIsOpen={setIsOpen} />
       </div>
     </div>

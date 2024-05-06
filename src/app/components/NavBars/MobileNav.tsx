@@ -90,6 +90,7 @@ function MobileNav({
                                 ? "active:border-yellow-500 active:bg-yellow-400 text-darkText active:text-lightText hover:border-yellow-500"
                                 : "active:border-yellow-900 active:bg-yellow-800 text-lightText active:text-darkText hover:border-yellow-900"
                             }`}
+                            onClick={() => setIsOpen(false)}
                           >
                             <a href={element.href}>
                               {lang === "es" ? element.es : element.en}
