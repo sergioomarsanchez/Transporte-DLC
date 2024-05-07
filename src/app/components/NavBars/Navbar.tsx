@@ -26,7 +26,7 @@ function Navbar() {
 
   return (
     <div
-      className={`flex items-center justify-between sticky top-0 shadow-lg h-16 md:h-20 ${
+      className={`flex items-center justify-between sticky top-0 shadow-lg h-16 md:h-20 z-10 ${
         theme === "dark" ? "dark-theme bg-darkBackground/75 shadow-gray-900" : "light-theme bg-lightBackground/75"
       } ${isScrolling?"opacity-60 hover:opacity-100":""}`}
     >

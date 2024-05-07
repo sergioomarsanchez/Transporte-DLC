@@ -24,7 +24,7 @@ function About() {
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 justify-center items-center gap-2 h-fit w-fit">
         {dataLang?.values?.map((value) => {
           return (
-            <ValueCard name={value.name} description={value.description} />
+            <ValueCard key={value.name} name={value.name} description={value.description} />
           );
         })}
       </div>

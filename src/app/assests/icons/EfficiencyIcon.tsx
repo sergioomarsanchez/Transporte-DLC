@@ -8,7 +8,7 @@ const EfficiencyIcon = ({ className }: { className: string }) => (
     width="800px"
     height="800px"
     viewBox="0 0 32 32"
-    enable-background="new 0 0 32 32"
+    enableBackground={"new 0 0 32 32"}
     xmlSpace="preserve"
   >
     <path

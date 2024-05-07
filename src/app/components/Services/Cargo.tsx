@@ -20,7 +20,7 @@ function Cargo() {
           {lang === "es" ? "Cargas" : "Cargo"}
         </h3>
       </header>
-      <p className="font-thin italic font-mono text-xs">
+      <section className="font-thin italic font-mono text-xs">
         {lang === "es" ? (
           <>
             <ul className="flex flex-col gap-2">
@@ -104,7 +104,7 @@ function Cargo() {
             </ul>
           </>
         )}
-      </p>
+      </section>
     </div>
   );
 }

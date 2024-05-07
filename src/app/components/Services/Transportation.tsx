@@ -20,7 +20,7 @@ function Transportation() {
           {lang === "es" ? "Transporte" : "Transportation"}
         </h3>
       </header>
-      <p className="font-thin italic font-mono text-xs">
+      <section className="font-thin italic font-mono text-xs">
         {lang === "es" ? (
           <>
             <ul className="flex flex-col gap-2">
@@ -108,7 +108,7 @@ function Transportation() {
             </ul>
           </>
         )}
-      </p>
+      </section>
     </div>
   );
 }

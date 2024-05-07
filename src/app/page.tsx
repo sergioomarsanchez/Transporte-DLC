@@ -1,8 +1,7 @@
 "use client";
-import Image from "next/image";
 import { useContext } from "react";
 import { ThemeContext } from "./context/themeContext";
-import HeroSection from "./components/HeroSection";
+import HeroCard from "./components/HeroCard";
 import About from "./components/About";
 import Service from "./components/Service";
 
@@ -16,7 +15,7 @@ export default function Home() {
       id="home"
     >
       <div className="max-w-5xl w-full items-center">
-        <HeroSection />
+        <HeroCard />
       </div>
       <div className="max-w-5xl w-full items-center" id="about">
         <About />

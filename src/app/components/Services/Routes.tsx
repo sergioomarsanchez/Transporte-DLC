@@ -20,7 +20,7 @@ function Routes() {
           {lang === "es" ? "Rutas" : "Routes"}
         </h3>
       </header>
-      <p className="font-thin italic font-mono text-xs">
+      <section className="font-thin italic font-mono text-xs">
         {lang === "es" ? (
           <>
             <ul className="flex flex-col gap-2">
@@ -86,7 +86,7 @@ function Routes() {
             </ul>
           </>
         )}
-      </p>
+      </section>
     </div>
   );
 }
