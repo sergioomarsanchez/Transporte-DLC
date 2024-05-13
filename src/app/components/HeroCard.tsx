@@ -11,7 +11,7 @@ function HeroCard() {
   return (
     <div
       className={clsx(
-        "group p-10 pt-4 bg-gradient-to-br bg-opacity-30 lg:pt-10 flex flex-col justify-start items-start gap-2 w-[90%] h-[25rem] duration-500 relative rounded-lg p-4hover:-translate-y-2 hover:shadow-xl",
+        "group p-10 pt-4 bg-gradient-to-br bg-opacity-30 from-[1%] to-[100%] lg:pt-10 flex flex-col justify-start items-start gap-2 w-[90%] h-[25rem] duration-500 relative rounded-lg p-4hover:-translate-y-2 hover:shadow-xl",
         {
           "from-yellow-900 to-darkBackground": theme === "dark",
           "from-yellow-200 to-lightBackground": theme === "light",

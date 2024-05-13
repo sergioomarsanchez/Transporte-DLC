@@ -3,8 +3,10 @@ import clsx from "clsx";
 import Image from "next/image";
 import logo from "@/app/assests/brandImgs/Logo-noBG.png";
 import React, { useContext } from "react";
+import { mobileMenuData as data } from "@/app/data/textData";
 import { LangContext } from "../context/langContext";
 import { ThemeContext } from "../context/themeContext";
+import SocialMedia from "./SocialMedia/SocialMedia";
 
 function Footer() {
   const { lang } = useContext(LangContext);
@@ -20,7 +22,7 @@ function Footer() {
           }
         )}
       >
-        <section className="flex flex-col justify-center items-center h-full w-full bg-red-500">
+        <section className="flex flex-col justify-center items-center h-full w-full">
           <Image
             src={logo}
             className={`flex -translate-y-3 ${
@@ -32,8 +34,41 @@ function Footer() {
             style={{ clipPath: "inset(50px 35px 25px 35px)" }}
           />
         </section>
-        <section className="flex flex-col justify-center items-center h-full w-full bg-blue-500">
-          <nav>Nav</nav>
+        <section className="flex flex-col lg:flex-row justify-between md:justify-evenly items-center h-full w-full">
+          <section className="flex flex-col justify-center item-center w-fit px-5">
+            <h4 className="text-base lg:text-lg w-full text-center">
+              {lang === "es"
+                ? "Contáctanos por estos medios"
+                : "Get in contact here"}
+            </h4>
+            <div className="flex justify-center items-center my-5 w-full">
+              <SocialMedia />
+            </div>
+            <a
+              href={"mailto:transportedimotta@gmail.com"}
+              target="_blank"
+              rel="noreferrer"
+              className="anchor"
+            >
+              transportedimotta@gmail.com
+            </a>
+          </section>
+          <nav className="flex justify-center items-center ">
+            <ul className="grid grid-cols-3 w-full mt-5 lg:mt-0 lg:justify-start lg:w-fit px-5 text-xs md:grid-cols-2 lg:grid-cols-1">
+              {data?.map((element) => {
+                return (
+                  <li
+                    key={element.en}
+                    className={`w-full flex items-start justify-start py-[0.2px] cursor-pointer whitespace-nowrap`}
+                  >
+                    <a href={element.href}>
+                      {lang === "es" ? element.es : element.en}
+                    </a>
+                  </li>
+                );
+              })}
+            </ul>
+          </nav>
         </section>
       </footer>
     </div>
