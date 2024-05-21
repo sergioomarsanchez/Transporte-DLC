@@ -4,6 +4,7 @@ import { ThemeContext } from "./context/themeContext";
 import HeroCard from "./components/HeroCard";
 import About from "./components/About";
 import Service from "./components/Service";
+import ContactForm from "./components/ContactForm";
 
 export default function Home() {
   const { theme } = useContext(ThemeContext);
@@ -22,6 +23,9 @@ export default function Home() {
       </div>
       <div className="max-w-5xl w-full items-center" id="services">
         <Service />
+      </div>
+      <div className="max-w-5xl w-full items-center" id="services">
+        <ContactForm />
       </div>
     </main>
   );

@@ -17,7 +17,7 @@ function Service() {
       </h2>
       <Tab.Group>
         <Tab.List
-          className={`w-fit flex gap-4 p-2 rounded-lg rounded-b-none bg-gradient-to-br bg-opacity-70 transition-all delay-500 ${
+          className={`w-fit flex gap-4 p-2 rounded-lg rounded-b-none bg-gradient-to-tr bg-opacity-70 transition-all delay-500 ${
             theme === "dark"
               ? "from-yellow-700 to-darkBackground"
               : "from-yellow-200 to-lightBackground"
