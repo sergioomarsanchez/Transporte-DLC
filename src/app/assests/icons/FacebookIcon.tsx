@@ -4,7 +4,7 @@ const FacebookIcon = ({ className }: { className: string }) => (
     width="1em"
     height="1.1em"
     viewBox="0 0 448 512"
-    stroke-width="0"
+    strokeWidth="0"
     fill="currentColor"
     stroke="currentColor"
     className={className}

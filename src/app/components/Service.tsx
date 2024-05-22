@@ -10,7 +10,7 @@ function Service() {
   const { theme } = useContext(ThemeContext);
   const { lang } = useContext(LangContext);
   return (
-    <div className="p-2 md:p-24">
+    <div className="p-2 md:px-24">
       <h2 className="text-xl md:text-2xl font-extrabold italic my-10">
         {" "}
         {lang === "es" ? "Servicios" : "Services"}

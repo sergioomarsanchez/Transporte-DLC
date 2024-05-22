@@ -9,7 +9,7 @@ function About() {
   const { lang } = useContext(LangContext);
   const dataLang = lang === "es" ? data.es : data.en;
   return (
-    <div className="p-2 md:p-24">
+    <div className="p-2 md:px-24 md:pt-20">
       <h2 className="text-xl md:text-2xl font-extrabold italic my-10">
         {dataLang.title}
       </h2>

@@ -104,7 +104,7 @@ const CargoIcon = ({ className }: { className: string }) => (
         stroke: "#73561f",
         strokeMiterlimit: 10,
         strokeWidth: 0.05430921534373718,
-      }} // Converted stroke-width to a number
+      }} 
     />
     <path
       d="M22.5,9.134l6.2-2.415v7.906l-6.2,2.509Z"
@@ -113,7 +113,7 @@ const CargoIcon = ({ className }: { className: string }) => (
         stroke: "#73561f",
         strokeMiterlimit: 10,
         strokeWidth: 0.05430921534373718,
-      }} // Converted stroke-width to a number
+      }} 
     />
     <path
       d="M22.433,9.119,16.4,6.557l6.062-2.274,6.2,2.4Z"
@@ -122,7 +122,7 @@ const CargoIcon = ({ className }: { className: string }) => (
         stroke: "#73561f",
         strokeMiterlimit: 10,
         strokeWidth: 0.05430921534373718,
-      }} // Converted stroke-width to a number
+      }} 
     />
     <path
       d="M10.072,17.092,3.872,14.7v7.375l6.2,2.847Z"
@@ -131,7 +131,7 @@ const CargoIcon = ({ className }: { className: string }) => (
         stroke: "#73561f",
         strokeMiterlimit: 10,
         strokeWidth: 0.05430921534373718,
-      }} // Converted stroke-width to a number
+      }} 
     />
     <path
       d="M10.056,17.144l6.2-2.417-6.2-2.465-6.2,2.4Z"
@@ -140,11 +140,8 @@ const CargoIcon = ({ className }: { className: string }) => (
         stroke: "#73561f",
         strokeMiterlimit: 10,
         strokeWidth: 0.05430921534373718,
-      }} // Converted stroke-width to a number
+      }} 
     />
-    The provided code already uses the correct format for styles in TSX.
-    However, the stroke-width property still contains the long decimal value.
-    Here's how to fix the styles: TypeScript
     <line
       x1="6.952"
       y1="15.883"
@@ -155,7 +152,7 @@ const CargoIcon = ({ className }: { className: string }) => (
         stroke: "#73561f",
         strokeMiterlimit: 10,
         strokeWidth: 0.05430921534373718,
-      }} // Converted stroke-width to a number
+      }} 
     />
     <path
       d="M16.3,19.658l-6.2-2.464v7.715l6.2,2.957Z"
@@ -164,7 +161,7 @@ const CargoIcon = ({ className }: { className: string }) => (
         stroke: "#73561f",
         strokeMiterlimit: 10,
         strokeWidth: 0.05430921534373718,
-      }} // Converted stroke-width to a number
+      }} 
     />
     <path
       d="M16.25,19.729l6.255-2.481v7.661L16.25,27.866Z"
@@ -173,7 +170,7 @@ const CargoIcon = ({ className }: { className: string }) => (
         stroke: "#73561f",
         strokeMiterlimit: 10,
         strokeWidth: 0.05430921534373718,
-      }} // Converted stroke-width to a number
+      }} 
     />
     <path
       d="M16.264,11.547l6.2-2.446v8.16l-6.2,2.485Z"
@@ -182,7 +179,7 @@ const CargoIcon = ({ className }: { className: string }) => (
         stroke: "#73561f",
         strokeMiterlimit: 10,
         strokeWidth: 0.05430921534373718,
-      }} // Converted stroke-width to a number
+      }} 
     />
     <path
       d="M16.264,11.528l-6.2-2.481V17.17l6.2,2.522Z"
@@ -191,7 +188,7 @@ const CargoIcon = ({ className }: { className: string }) => (
         stroke: "#73561f",
         strokeMiterlimit: 10,
         strokeWidth: 0.05430921534373718,
-      }} // Converted stroke-width to a number
+      }} 
     />
     <path
       d="M16.277,11.508l6.169-2.435-6.2-2.531-6.2,2.467Z"
@@ -200,7 +197,7 @@ const CargoIcon = ({ className }: { className: string }) => (
         stroke: "#73561f",
         strokeMiterlimit: 10,
         strokeWidth: 0.05430921534373718,
-      }} // Converted stroke-width to a number
+      }} 
     />
     <line
       x1="12.82"
@@ -212,7 +209,7 @@ const CargoIcon = ({ className }: { className: string }) => (
         stroke: "#73561f",
         strokeMiterlimit: 10,
         strokeWidth: 0.05430921534373718,
-      }} // Converted stroke-width to a number
+      }} 
     />
     <line
       x1="13.037"
@@ -224,7 +221,7 @@ const CargoIcon = ({ className }: { className: string }) => (
         stroke: "#73561f",
         strokeMiterlimit: 10,
         strokeWidth: 0.05430921534373718,
-      }} // Converted stroke-width to a number
+      }} 
     />
     <line
       x1="19.811"
@@ -236,7 +233,7 @@ const CargoIcon = ({ className }: { className: string }) => (
         stroke: "#73561f",
         strokeMiterlimit: 10,
         strokeWidth: 0.05430921534373718,
-      }} // Converted stroke-width to a number
+      }} 
     />
     <polygon
       points="18.301 7.395 12.061 9.879 13.543 10.472 19.739 8.006 18.301 7.395"
@@ -246,7 +243,7 @@ const CargoIcon = ({ className }: { className: string }) => (
         strokeMiterlimit: 10,
         strokeWidth: 0.04741218643894885,
         opacity: 0.3,
-      }} // Converted stroke-width to a number
+      }} 
     />
     <polygon
       points="18.573 2.616 12.333 5.1 13.815 5.693 20.01 3.227 18.573 2.616"
@@ -256,7 +253,7 @@ const CargoIcon = ({ className }: { className: string }) => (
         strokeMiterlimit: 10,
         strokeWidth: 0.04741218643894885,
         opacity: 0.3,
-      }} // Converted stroke-width to a number
+      }} 
     />
     <polygon
       points="6.266 15.628 7.747 16.22 10.089 15.288 10.063 14.116 6.266 15.628"
@@ -266,7 +263,7 @@ const CargoIcon = ({ className }: { className: string }) => (
         strokeMiterlimit: 10,
         strokeWidth: 0.04741218643894885,
         opacity: 0.3,
-      }} // Converted stroke-width to a number
+      }} 
     />
     <polygon
       points="20.495 5.029 19.156 5.554 25.383 7.967 26.725 7.443 20.495 5.029"
@@ -276,7 +273,7 @@ const CargoIcon = ({ className }: { className: string }) => (
         strokeMiterlimit: 10,
         strokeWidth: 0.041861926921599964,
         opacity: 0.3,
-      }} // Converted stroke-width to a number
+      }} 
     />
     <polygon
       points="6.7 17.509 6.751 17.465 6.647 17.424 6.7 17.509"
@@ -294,7 +291,7 @@ const CargoIcon = ({ className }: { className: string }) => (
         strokeMiterlimit: 10,
         strokeWidth: 0.06661495224335688,
         opacity: 0.3,
-      }} // Converted stroke-width to a number
+      }} 
     />
     <polygon
       points="12.783 6.973 12.833 6.929 12.729 6.888 12.783 6.973"
@@ -312,7 +309,7 @@ const CargoIcon = ({ className }: { className: string }) => (
         strokeMiterlimit: 10,
         strokeWidth: 0.06661495224335688,
         opacity: 0.3,
-      }} // Converted stroke-width to a number
+      }} 
     />
     <polygon
       points="12.544 11.783 12.594 11.739 12.49 11.699 12.544 11.783"
@@ -330,7 +327,7 @@ const CargoIcon = ({ className }: { className: string }) => (
         strokeMiterlimit: 10,
         strokeWidth: 0.06661495224335688,
         opacity: 0.3,
-      }} // Converted stroke-width to a number
+      }} 
     />
     <polygon
       points="13.139 16.719 13.089 16.764 13.193 16.803 13.139 16.719"
@@ -348,7 +345,7 @@ const CargoIcon = ({ className }: { className: string }) => (
         strokeMiterlimit: 10,
         strokeWidth: 0.06661495224335688,
         opacity: 0.3,
-      }} // Converted stroke-width to a number
+      }} 
     />
     <polygon
       points="7.328 21.878 7.278 21.923 7.382 21.962 7.328 21.878"
@@ -366,7 +363,7 @@ const CargoIcon = ({ className }: { className: string }) => (
         strokeMiterlimit: 10,
         strokeWidth: 0.06661495224335688,
         opacity: 0.3,
-      }} // Converted stroke-width to a number
+      }} 
     />
     <polygon
       points="25.761 14.093 25.812 14.138 25.708 14.178 25.761 14.093"
@@ -384,7 +381,7 @@ const CargoIcon = ({ className }: { className: string }) => (
         strokeMiterlimit: 10,
         strokeWidth: 0.06661495224335688,
         opacity: 0.3,
-      }} // Converted stroke-width to a number
+      }} 
     />
     <polygon
       points="26.356 9.321 26.307 9.276 26.411 9.237 26.356 9.321"
@@ -402,7 +399,7 @@ const CargoIcon = ({ className }: { className: string }) => (
         strokeMiterlimit: 10,
         strokeWidth: 0.06661495224335688,
         opacity: 0.3,
-      }} // Converted stroke-width to a number
+      }} 
     />
     <polygon
       points="19.428 24.558 19.478 24.602 19.375 24.642 19.428 24.558"
@@ -420,7 +417,7 @@ const CargoIcon = ({ className }: { className: string }) => (
         strokeMiterlimit: 10,
         strokeWidth: 0.06661495224335688,
         opacity: 0.3,
-      }} // Converted stroke-width to a number
+      }} 
     />
     <polygon
       points="20.023 19.948 19.973 19.903 20.078 19.864 20.023 19.948"

@@ -4,7 +4,7 @@ const InstagramIcon = ({ className }: { className: string }) => (
     width="1em"
     height="1.2em"
     viewBox="0 0 24 24"
-    stroke-width="1"
+    strokeWidth="1"
     fill="currentColor"
     stroke="currentColor"
     className={className}
