@@ -1,12 +1,13 @@
-import React, { useContext, useEffect } from "react";
+import React, { useContext, useState } from "react";
 import { ThemeContext } from "../context/themeContext";
 import { LangContext } from "../context/langContext";
 import { type Contact, ContactValidator } from "../types";
-import { useForm } from "react-hook-form";
+import { SubmitHandler, useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import clsx from "clsx";
 import EmailIcon from "../assests/icons/EmailIcon";
 import SendIcon from "../assests/icons/SendIcon";
+import Loader from "./Loader/Loader";
 
 function ContactForm({ imageColor }: { imageColor: string }) {
   const {
@@ -19,11 +20,12 @@ function ContactForm({ imageColor }: { imageColor: string }) {
     mode: "onBlur",
     reValidateMode: "onChange",
   });
-
-  async function onSubmit(data: Contact) {
-    console.log(data);
+  const [isLoading, setIsLoading] = useState(false);
+  const onSubmit: SubmitHandler<Contact> = async (data, event) => {
+    event?.preventDefault();
     try {
-      const res = await fetch("/api/contact", {
+      setIsLoading(true);
+      const res = await fetch("/api", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -32,17 +34,28 @@ function ContactForm({ imageColor }: { imageColor: string }) {
       });
 
       const result = await res.json();
-
+      //TODO ADD Feedback to the user(TOAST OR SOMETHING)
       if (res.status === 200) {
         reset();
+        console.log("success");
       }
     } catch (error) {
       console.error(error);
+      //TODO ADD Feedback to the user(TOAST OR SOMETHING)
+    } finally {
+      setIsLoading(false);
     }
-  }
+  };
   const { theme } = useContext(ThemeContext);
   const { lang } = useContext(LangContext);
-
+  const textButton =
+    isLoading && lang === "es"
+      ? "Enviando..."
+      : isLoading
+      ? "Sending..."
+      : lang === "es"
+      ? "Enviar"
+      : "Send";
   return (
     <div className="p-2 md:px-24">
       <h3 className="text-xl md:text-2xl font-extrabold italic my-10">
@@ -60,6 +73,7 @@ function ContactForm({ imageColor }: { imageColor: string }) {
           }
         )}
       >
+        {isLoading && <Loader />}
         <div className="flex flex-col gap-8 px-8 py-10">
           <header className="w-[60%] md:w-[57%] flex items-center justify-between">
             <i
@@ -71,7 +85,11 @@ function ContactForm({ imageColor }: { imageColor: string }) {
               {lang === "es" ? "Contáctanos" : "Contact us"}
             </h3>
           </header>
-          <div className="flex items-center justify-center w-full md:justify-start">
+          <div
+            className={`flex items-center justify-center w-full md:justify-start ${
+              isLoading && "invisible"
+            }`}
+          >
             <div className="relative w-full">
               <input
                 type="text"
@@ -94,7 +112,11 @@ function ContactForm({ imageColor }: { imageColor: string }) {
               )}
             </div>
           </div>
-          <div className="flex items-center justify-center w-full md:justify-start">
+          <div
+            className={`flex items-center justify-center w-full md:justify-start ${
+              isLoading && "invisible"
+            }`}
+          >
             <div className="relative w-full">
               <input
                 type="text"
@@ -119,7 +141,11 @@ function ContactForm({ imageColor }: { imageColor: string }) {
               )}
             </div>
           </div>
-          <div className="flex items-center justify-center w-full md:justify-start">
+          <div
+            className={`flex items-center justify-center w-full md:justify-start ${
+              isLoading && "invisible"
+            }`}
+          >
             <div className="relative w-full">
               <input
                 type="email"
@@ -146,7 +172,11 @@ function ContactForm({ imageColor }: { imageColor: string }) {
               )}
             </div>
           </div>
-          <div className="flex items-center justify-center w-full">
+          <div
+            className={`flex items-center justify-center w-full ${
+              isLoading && "invisible"
+            }`}
+          >
             <div className="relative w-full">
               <textarea
                 id="message"
@@ -176,7 +206,7 @@ function ContactForm({ imageColor }: { imageColor: string }) {
             className={`${imageColor} flex justify-center items-center relative py-2 px-5 md:pr-14 md:py-3 rounded-full rounded-tl-none mb-4 hover:shadow-lg hover:shadow-red-900 transition-all md:self-end md:w-fit`}
             type="submit"
           >
-            {lang === "es" ? "Enviar" : "Send"}
+            {textButton}
             <i className="absolute right-5">
               <SendIcon className="h-6 w-6 md:w-8 md:h-8" />
             </i>
