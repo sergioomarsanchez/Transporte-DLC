@@ -2,13 +2,29 @@
 import clsx from "clsx";
 import Image from "next/image";
 import logo from "@/app/assests/brandImgs/Logo-noBG.png";
-import React, { useContext } from "react";
+import React, { useContext, useEffect, useRef, useState } from "react";
 import { mobileMenuData as data } from "@/app/data/textData";
 import { LangContext } from "../context/langContext";
 import { ThemeContext } from "../context/themeContext";
 import SocialMedia from "./SocialMedia/SocialMedia";
 
 function Footer() {
+  const [footerVisible, setFooterVisible] = useState(false);
+  const socialMediaRef = useRef(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver((entries) => {
+      const entry = entries[0];
+      setFooterVisible(entry.isIntersecting);
+    });
+
+    if (socialMediaRef.current) {
+      observer.observe(socialMediaRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, [socialMediaRef]);
+
   const { lang } = useContext(LangContext);
   const { theme } = useContext(ThemeContext);
   return (
@@ -41,8 +57,11 @@ function Footer() {
                 ? "Contáctanos por estos medios"
                 : "Get in contact here"}
             </h4>
-            <div className="flex justify-center items-center my-5 w-full">
-              <SocialMedia />
+            <div
+              ref={socialMediaRef}
+              className="flex justify-center items-center my-5 w-full"
+            >
+              <SocialMedia footerVisible={footerVisible} />
             </div>
             <a
               href={"mailto:transportedimotta@gmail.com"}

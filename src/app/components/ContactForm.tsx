@@ -37,10 +37,10 @@ function ContactForm({ imageColor }: { imageColor: string }) {
 
       const result = await res.json();
       if (result.status === 200) {
-          toast.success(
-              lang === "es"
-              ? "Mail enviado correctamente, responderemos a la brevedad!"
-              : "Mail sent correctly, we will replay ASAP!",
+        toast.success(
+          lang === "es"
+            ? "Mail enviado correctamente, responderemos a la brevedad!"
+            : "Mail sent correctly, we will replay ASAP!",
           {
             position: "bottom-center",
             autoClose: 3000,
@@ -50,7 +50,7 @@ function ContactForm({ imageColor }: { imageColor: string }) {
             draggable: true,
             progress: undefined,
             theme: "colored",
-        }
+          }
         );
         reset();
       } else {
@@ -247,8 +247,9 @@ function ContactForm({ imageColor }: { imageColor: string }) {
             </div>
           </div>
           <button
-            className={`${imageColor} flex justify-center items-center relative py-2 px-5 md:pr-14 md:py-3 rounded-full rounded-tl-none mb-4 hover:shadow-lg hover:shadow-red-900 transition-all md:self-end md:w-fit`}
+            className={`${imageColor} disabled:grayscale-0 flex justify-center items-center relative py-2 px-5 md:pr-14 md:py-3 rounded-full rounded-tl-none mb-4 hover:shadow-lg hover:shadow-red-900 transition-all md:self-end md:w-fit`}
             type="submit"
+            disabled={isLoading}
           >
             {textButton}
             <i className="absolute right-5">

@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useRef } from "react";
 import { SocialData } from "@/app/data/textData";
 import SocialMediaIcon from "./SocialMediaIcon";
+import WhatsappButton from "./WhatsappButton";
 
-function SocialMedia() {
+function SocialMedia({ footerVisible }: { footerVisible: boolean }) {
   return (
     <div className="flex gap-14">
       {SocialData?.map((value) => {
@@ -14,6 +15,7 @@ function SocialMedia() {
           />
         );
       })}
+      <WhatsappButton key={"whatsapp"} footerVisible={footerVisible} />
     </div>
   );
 }
