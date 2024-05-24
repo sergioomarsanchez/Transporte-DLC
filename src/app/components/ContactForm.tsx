@@ -8,6 +8,8 @@ import clsx from "clsx";
 import EmailIcon from "../assests/icons/EmailIcon";
 import SendIcon from "../assests/icons/SendIcon";
 import Loader from "./Loader/Loader";
+import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 function ContactForm({ imageColor }: { imageColor: string }) {
   const {
@@ -34,14 +36,58 @@ function ContactForm({ imageColor }: { imageColor: string }) {
       });
 
       const result = await res.json();
-      //TODO ADD Feedback to the user(TOAST OR SOMETHING)
-      if (res.status === 200) {
+      console.log(result, "RESULT")
+      console.log(result.status, "RESUlT.STATUS")
+      if (result.status === 200) {
+          toast.success(
+              lang === "es"
+              ? "Mail enviado correctamente, responderemos a la brevedad!"
+              : "Mail sent correctly, we will replay ASAP!",
+          {
+            position: "bottom-center",
+            autoClose: 3000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "colored",
+        }
+        );
         reset();
-        console.log("success");
+      } else {
+        toast.error(
+          lang === "es"
+            ? "Algo salió mal, por favo, intenta nuevamente."
+            : "Something went wrong. Please try again.",
+          {
+            position: "bottom-center",
+            autoClose: 3000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "colored",
+          }
+        );
       }
     } catch (error) {
-      console.error(error);
-      //TODO ADD Feedback to the user(TOAST OR SOMETHING)
+      toast.error(
+        lang === "es"
+          ? "Hubo un error, por favo, intenta nuevamente."
+          : "An error occurred. Please try again.",
+        {
+          position: "bottom-center",
+          autoClose: 3000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "colored",
+        }
+      );
     } finally {
       setIsLoading(false);
     }
@@ -215,6 +261,7 @@ function ContactForm({ imageColor }: { imageColor: string }) {
         <div className="h-2 w-full bg-gradient-to-l via-yellow-500 group-hover:blur-xl blur-2xl m-auto rounded transition-all absolute bottom-0"></div>
         <div className="h-0.5 group-hover:w-full bg-gradient-to-l via-yellow-950 group-hover:via-yellow-500 w-7/10 m-auto rounded transition-all"></div>
       </form>
+      <ToastContainer />
     </div>
   );
 }

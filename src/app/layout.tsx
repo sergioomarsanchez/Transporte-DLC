@@ -5,10 +5,12 @@ import { ThemeProvider } from "./context/themeContext";
 import { LangProvider } from "./context/langContext";
 import Navbar from "./components/NavBars/Navbar";
 import Footer from "./components/Footer";
+import "react-toastify/dist/ReactToastify.css";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("http://localhost:3000/"),
   title: "Transporte DLC Concepción del Uruguay E.R.",
   description:
     "Transporte confiable y eficiente de carga por tierra desde Concepción del Uruguay hacia cualquier destino en Argentina.",
