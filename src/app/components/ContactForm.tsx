@@ -36,8 +36,6 @@ function ContactForm({ imageColor }: { imageColor: string }) {
       });
 
       const result = await res.json();
-      console.log(result, "RESULT")
-      console.log(result.status, "RESUlT.STATUS")
       if (result.status === 200) {
           toast.success(
               lang === "es"
