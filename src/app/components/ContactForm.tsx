@@ -22,7 +22,7 @@ function ContactForm({ imageColor }: { imageColor: string }) {
     mode: "onTouched",
     reValidateMode: "onChange",
   });
-  const [isLoading, setIsLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState(false);
   const onSubmit: SubmitHandler<Contact> = async (data, event) => {
     event?.preventDefault();
     try {
