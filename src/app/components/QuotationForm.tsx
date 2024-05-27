@@ -7,7 +7,7 @@ import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { SubmitHandler, useForm } from "react-hook-form";
 import clsx from "clsx";
-import { ToastContainer } from "react-toastify";
+import { ToastContainer, toast } from "react-toastify";
 import EmailIcon from "../assests/icons/EmailIcon";
 import SendIcon from "../assests/icons/SendIcon";
 import Loader from "./Loader/Loader";
@@ -116,7 +116,6 @@ function QuotationForm({
           ? "La fecha de entrega es obligatoria"
           : "Delivery date is required"
       ),
-    // additionalServices: z.array(z.string()).optional(),
     paymentMethod: z
       .string()
       .min(
@@ -142,9 +141,71 @@ function QuotationForm({
   });
   const onSubmit: SubmitHandler<FormData> = async (data, event) => {
     event?.preventDefault();
-    setIsLoading(true);
-    console.log(data);
-    setIsLoading(false);
+    try {
+      setIsLoading(true);
+      const res = await fetch("/api/quotation", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      });
+
+      const result = await res.json();
+      if (result.status === 200) {
+        toast.success(
+          lang === "es"
+            ? "Mail enviado correctamente, responderemos a la brevedad!"
+            : "Mail sent correctly, we will replay ASAP!",
+          {
+            position: "bottom-center",
+            autoClose: 3000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "colored",
+          }
+        );
+        reset();
+        setIsOpen(false)
+      } else {
+        toast.error(
+          lang === "es"
+            ? "Algo salió mal, por favo, intenta nuevamente."
+            : "Something went wrong. Please try again.",
+          {
+            position: "bottom-center",
+            autoClose: 3000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "colored",
+          }
+        );
+      }
+    } catch (error) {
+      toast.error(
+        lang === "es"
+          ? "Hubo un error, por favo, intenta nuevamente."
+          : "An error occurred. Please try again.",
+        {
+          position: "bottom-center",
+          autoClose: 3000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "colored",
+        }
+      );
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   const handleOpenModal = (e: React.MouseEvent<HTMLButtonElement>) => {
@@ -566,37 +627,6 @@ function QuotationForm({
                             <p className="text-xs h-4 m-2"></p>
                           )}
                         </div>
-                        {/* <div className="w-full h-fit">
-                        <label htmlFor="additionalServices">{lang==="es"?"Selecciona":}</label>
-                        <select
-                        id="additionalServices"
-                        {...register("additionalServices")}
-                          className="w-full border-b border-gray-300 py-1 focus:border-b-2 focus:border-green-700 transition-colors focus:outline-none peer bg-inherit"
-                          multiple
-                        >
-                          <option value="insurance">
-                            {lang === "es" ? "Seguro" : "Insurance"}
-                          </option>
-                          <option value="loading">
-                          {lang === "es"
-                              ? "Asistencia para cargar"
-                              : "Loading Assistance"}
-                              </option>
-                          <option value="unloading">
-                          {lang === "es"
-                          ? "Asistencia para descargar"
-                              : "Unloading Assistance"}
-                          </option>
-                          <option value="storage">
-                            {lang === "es" ? "Almacenamiento" : "Storage"}
-                            </option>
-                            <option value="specialHandling">
-                            {lang === "es"
-                              ? "Manejo especial"
-                              : "Special Handling"}
-                          </option>
-                        </select>
-                      </div> */}
                         <div className="relative w-full">
                           <textarea
                             id="comments"
@@ -617,6 +647,7 @@ function QuotationForm({
                           className={`bg-red-500 disabled:grayscale-0 flex justify-center items-center relative py-2 px-5 pr-10 md:py-3 rounded-full rounded-tl-none mb-4 hover:shadow-lg hover:shadow-red-900 transition-all md:self-end md:w-fit`}
                           onClick={() => handleCloseModal()}
                           disabled={isLoading}
+                          type="button"
                         >
                           {lang === "es" ? "Cancelar" : "Cancel"}
                           <i className="absolute right-5">X</i>
