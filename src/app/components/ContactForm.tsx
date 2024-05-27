@@ -19,10 +19,10 @@ function ContactForm({ imageColor }: { imageColor: string }) {
     formState: { errors },
   } = useForm<Contact>({
     resolver: zodResolver(ContactValidator),
-    mode: "onBlur",
+    mode: "onTouched",
     reValidateMode: "onChange",
   });
-  const [isLoading, setIsLoading] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
   const onSubmit: SubmitHandler<Contact> = async (data, event) => {
     event?.preventDefault();
     try {

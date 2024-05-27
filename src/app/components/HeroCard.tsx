@@ -1,13 +1,15 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { ThemeContext } from "../context/themeContext";
 import { LangContext } from "../context/langContext";
 import Image from "next/image";
 import heroImg from "@/app/assests/img/heroImg.jpeg";
 import clsx from "clsx";
+import QuotationForm from "./QuotationForm";
 
 function HeroCard() {
   const { theme } = useContext(ThemeContext);
   const { lang } = useContext(LangContext);
+  const [isOpen, setIsOpen] = useState(false);
   return (
     <div
       className={clsx(
@@ -36,9 +38,11 @@ function HeroCard() {
         </p>
       </div>
       <div className="flex gap-2 justify-center items-center w-fit h-fit text-sm md:text-base">
-        <button className="px-4 py-2 font-semibold rounded-full hover:bg-yellow-600 bg-yellow-400 hover:scale-[102%] text-black transition-all delay-200 active:scale-[98%]">
-          Cotizar
-        </button>
+        <QuotationForm
+          isOpen={isOpen}
+          setIsOpen={setIsOpen}
+          imageColor={theme === "dark" ? "bg-green-300" : "bg-green-700"}
+        />
         <button className="px-4 py-2 font-semibold border-[1px] border-yellow-400 bg-transparent rounded-full hover:bg-yellow-600 hover:scale-[102%] transition-all delay-200 active:scale-[98%]">
           Llamar
         </button>

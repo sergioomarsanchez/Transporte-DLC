@@ -31,7 +31,7 @@ function Footer() {
     <div className={theme === "dark" ? "dark-theme" : "light-theme"}>
       <footer
         className={clsx(
-          "static bottom-0 w-full flex flex-col justify-start md:flex-row p-10 lg:p-20 gap-5 bg-gradient-to-br bg-opacity-30 rounded-lg shadow-md",
+          "static bottom-0 w-full flex flex-col justify-start md:flex-row p-10 lg:p-12 gap-5 bg-gradient-to-br bg-opacity-30 rounded-lg shadow-md",
           {
             "from-yellow-900 to-darkBackground": theme === "dark",
             "from-yellow-400 to-lightBackground": theme === "light",
@@ -73,7 +73,7 @@ function Footer() {
             </a>
           </section>
           <nav className="flex justify-center items-center ">
-            <ul className="grid grid-cols-3 w-full mt-5 lg:mt-0 lg:justify-start lg:w-fit px-5 text-xs md:grid-cols-2 lg:grid-cols-1">
+            <ul className="grid gap-3 grid-cols-3 w-full mt-5 lg:mt-0 lg:justify-start lg:w-fit px-5 text-xs md:grid-cols-2 lg:grid-cols-1">
               {data?.map((element) => {
                 return (
                   <li

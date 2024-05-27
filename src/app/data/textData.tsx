@@ -6,7 +6,7 @@ export const mobileMenuData = [
   },
   {
     en: "About Us",
-    es: "Sobre Nosotros",
+    es: "Nosotros",
     href: "#about",
   },
   {
