@@ -169,7 +169,7 @@ function QuotationForm({
           }
         );
         reset();
-        setIsOpen(false)
+        setIsOpen(false);
       } else {
         toast.error(
           lang === "es"
@@ -228,14 +228,12 @@ function QuotationForm({
 
   return (
     <>
-      {!isOpen && (
-        <button
-          className="px-4 py-2 font-semibold rounded-full hover:bg-green-600 bg-green-400 hover:scale-[102%] text-black transition-all delay-200 active:scale-[98%]"
-          onClick={handleOpenModal}
-        >
-          {lang === "es" ? "Cotizar" : "Quotation"}
-        </button>
-      )}
+      <button
+        className="px-4 py-2 font-semibold rounded-full hover:bg-yellow-600 bg-yellow-400 hover:scale-[102%] text-black transition-all delay-200 active:scale-[98%]"
+        onClick={handleOpenModal}
+      >
+        {lang === "es" ? "Cotizar" : "Quotation"}
+      </button>
       <Transition appear show={isOpen} as={Fragment}>
         <Dialog as="div" open={isOpen} onClose={() => handleCloseModal()}>
           <Transition.Child
@@ -251,10 +249,10 @@ function QuotationForm({
           </Transition.Child>
           <div className="fixed flex justify-center items-center inset-0 overflow-y-auto z-20">
             <div
-              className={`absolute top-20  z-20 w-[95%] md:w-[90%] lg:w-[85%] xl:w-[80%] h-fit border-[0.5px] rounded-lg flex flex-col items-center border-green-600 ${
+              className={`absolute top-20  z-20 w-[95%] md:w-[90%] lg:w-[85%] xl:w-[80%] h-fit border-[0.5px] rounded-lg flex flex-col items-center border-yellow-600 ${
                 theme === "dark"
-                  ? "from-green-700 to-green-900 to-70% bg-gradient-to-br"
-                  : "from-green-400 to-green-600 to-70% bg-gradient-to-br"
+                  ? "from-yellow-700 to-yellow-900 to-70% bg-gradient-to-br"
+                  : "from-yellow-400 to-yellow-600 to-70% bg-gradient-to-br"
               }`}
             >
               <Transition.Child
@@ -276,7 +274,7 @@ function QuotationForm({
                   <Dialog.Title
                     className={`${
                       theme === "dark" ? "text-gray-400" : "text-gray-900"
-                    } font-bold text-lg pt-5`}
+                    } font-bold text-lg lg:text-xl pt-5`}
                   >
                     {lang === "es" ? "Cotizar" : "Quotation"}
                   </Dialog.Title>
@@ -294,13 +292,13 @@ function QuotationForm({
                   >
                     {isLoading && <Loader />}
                     <div className="flex flex-col gap-8 px-8 py-10">
-                      <header className="w-[80%] md:w-[57%] flex items-center justify-between">
+                      <header className="w-full flex items-center justify-center mb-5">
                         <i
-                          className={`${imageColor} p-2 w-fit rounded-xl rounded-tl-none mb-4 group-hover:-translate-y-1 group-hover:shadow-xl group-hover:shadow-green-900 transition-all`}
+                          className={`${imageColor} absolute top-5 left-5 p-2 w-fit rounded-xl rounded-tl-none mb-4 group-hover:-translate-y-1 group-hover:shadow-xl group-hover:shadow-yellow-900 transition-all`}
                         >
                           <EmailIcon className="h-6 w-6 md:w-8 md:h-8" />
                         </i>
-                        <h3 className="text-lg md:text-xl font-extrabold whitespace-nowrap">
+                        <h3 className="text-base lg:text-lg font-extrabold whitespace-nowrap">
                           {lang === "es"
                             ? "Pedido de cotización"
                             : "Quotation request"}
@@ -316,11 +314,11 @@ function QuotationForm({
                             type="text"
                             id="senderName"
                             {...register("senderName")}
-                            className="w-full border-b border-gray-300 py-1 focus:border-b-2 focus:border-green-700 transition-colors focus:outline-none peer bg-inherit"
+                            className="w-full border-b border-gray-300 py-1 focus:border-b-2 focus:border-yellow-700 transition-colors focus:outline-none peer bg-inherit"
                           />
                           <label
                             htmlFor="senderName"
-                            className="absolute left-0 cursor-text peer-focus:text-base text-xs -top-5 transition-all peer-focus:text-green-700"
+                            className="absolute left-0 cursor-text peer-focus:text-base text-xs -top-5 transition-all peer-focus:text-yellow-700"
                           >
                             {lang === "es"
                               ? "Nombre del remitente"
@@ -339,11 +337,11 @@ function QuotationForm({
                             type="text"
                             id="senderContact"
                             {...register("senderContact")}
-                            className="w-full border-b border-gray-300 py-1 focus:border-b-2 focus:border-green-700 transition-colors focus:outline-none peer bg-inherit"
+                            className="w-full border-b border-gray-300 py-1 focus:border-b-2 focus:border-yellow-700 transition-colors focus:outline-none peer bg-inherit"
                           />
                           <label
                             htmlFor="senderContact"
-                            className="absolute left-0 cursor-text peer-focus:text-base text-xs -top-5 transition-all peer-focus:text-green-700"
+                            className="absolute left-0 cursor-text peer-focus:text-base text-xs -top-5 transition-all peer-focus:text-yellow-700"
                           >
                             {lang === "es"
                               ? "Contacto del remitente"
@@ -362,11 +360,11 @@ function QuotationForm({
                             type="email"
                             id="senderEmail"
                             {...register("senderEmail")}
-                            className="w-full border-b border-gray-300 py-1 focus:border-b-2 focus:border-green-700 transition-colors focus:outline-none peer bg-inherit"
+                            className="w-full border-b border-gray-300 py-1 focus:border-b-2 focus:border-yellow-700 transition-colors focus:outline-none peer bg-inherit"
                           />
                           <label
                             htmlFor="senderEmail"
-                            className="absolute left-0 cursor-text peer-focus:text-base text-xs -top-5 transition-all peer-focus:text-green-700"
+                            className="absolute left-0 cursor-text peer-focus:text-base text-xs -top-5 transition-all peer-focus:text-yellow-700"
                           >
                             {lang === "es"
                               ? "Correo electrónico del remitente"
@@ -385,11 +383,11 @@ function QuotationForm({
                             type="text"
                             id="receiverName"
                             {...register("receiverName")}
-                            className="w-full border-b border-gray-300 py-1 focus:border-b-2 focus:border-green-700 transition-colors focus:outline-none peer bg-inherit"
+                            className="w-full border-b border-gray-300 py-1 focus:border-b-2 focus:border-yellow-700 transition-colors focus:outline-none peer bg-inherit"
                           />
                           <label
                             htmlFor="receiverName"
-                            className="absolute left-0 cursor-text peer-focus:text-base text-xs -top-5 transition-all peer-focus:text-green-700"
+                            className="absolute left-0 cursor-text peer-focus:text-base text-xs -top-5 transition-all peer-focus:text-yellow-700"
                           >
                             {lang === "es"
                               ? "Nombre del receptor"
@@ -408,11 +406,11 @@ function QuotationForm({
                             type="text"
                             id="receiverContact"
                             {...register("receiverContact")}
-                            className="w-full border-b border-gray-300 py-1 focus:border-b-2 focus:border-green-700 transition-colors focus:outline-none peer bg-inherit"
+                            className="w-full border-b border-gray-300 py-1 focus:border-b-2 focus:border-yellow-700 transition-colors focus:outline-none peer bg-inherit"
                           />
                           <label
                             htmlFor="receiverContact"
-                            className="absolute left-0 cursor-text peer-focus:text-base text-xs -top-5 transition-all peer-focus:text-green-700"
+                            className="absolute left-0 cursor-text peer-focus:text-base text-xs -top-5 transition-all peer-focus:text-yellow-700"
                           >
                             {lang === "es"
                               ? "Contacto del receptor"
@@ -431,11 +429,11 @@ function QuotationForm({
                             type="text"
                             id="cargoType"
                             {...register("cargoType")}
-                            className="w-full border-b border-gray-300 py-1 focus:border-b-2 focus:border-green-700 transition-colors focus:outline-none peer bg-inherit"
+                            className="w-full border-b border-gray-300 py-1 focus:border-b-2 focus:border-yellow-700 transition-colors focus:outline-none peer bg-inherit"
                           />
                           <label
                             htmlFor="cargoType"
-                            className="absolute left-0 cursor-text peer-focus:text-base text-xs -top-5 transition-all peer-focus:text-green-700"
+                            className="absolute left-0 cursor-text peer-focus:text-base text-xs -top-5 transition-all peer-focus:text-yellow-700"
                           >
                             {lang === "es" ? "Tipo de carga" : "Cargo Type"}
                           </label>
@@ -452,11 +450,11 @@ function QuotationForm({
                             type="text"
                             id="cargoDimensions"
                             {...register("cargoDimensions")}
-                            className="w-full border-b border-gray-300 py-1 focus:border-b-2 focus:border-green-700 transition-colors focus:outline-none peer bg-inherit"
+                            className="w-full border-b border-gray-300 py-1 focus:border-b-2 focus:border-yellow-700 transition-colors focus:outline-none peer bg-inherit"
                           />
                           <label
                             htmlFor="cargoDimensions"
-                            className="absolute left-0 cursor-text peer-focus:text-base text-xs -top-5 transition-all peer-focus:text-green-700"
+                            className="absolute left-0 cursor-text peer-focus:text-base text-xs -top-5 transition-all peer-focus:text-yellow-700"
                           >
                             {lang === "es"
                               ? "Dimensiones de la carga"
@@ -475,11 +473,11 @@ function QuotationForm({
                             type="number"
                             id="cargoWeight"
                             {...register("cargoWeight")}
-                            className="w-full border-b border-gray-300 py-1 focus:border-b-2 focus:border-green-700 transition-colors focus:outline-none peer bg-inherit"
+                            className="w-full border-b border-gray-300 py-1 focus:border-b-2 focus:border-yellow-700 transition-colors focus:outline-none peer bg-inherit"
                           />
                           <label
                             htmlFor="cargoWeight"
-                            className="absolute left-0 cursor-text peer-focus:text-base text-xs -top-5 transition-all peer-focus:text-green-700"
+                            className="absolute left-0 cursor-text peer-focus:text-base text-xs -top-5 transition-all peer-focus:text-yellow-700"
                           >
                             {lang === "es"
                               ? "Peso de la carga (kg)"
@@ -498,11 +496,11 @@ function QuotationForm({
                             type="text"
                             id="pickupAddress"
                             {...register("pickupAddress")}
-                            className="w-full border-b border-gray-300 py-1 focus:border-b-2 focus:border-green-700 transition-colors focus:outline-none peer bg-inherit"
+                            className="w-full border-b border-gray-300 py-1 focus:border-b-2 focus:border-yellow-700 transition-colors focus:outline-none peer bg-inherit"
                           />
                           <label
                             htmlFor="pickupAddress"
-                            className="absolute left-0 cursor-text peer-focus:text-base text-xs -top-5 transition-all peer-focus:text-green-700"
+                            className="absolute left-0 cursor-text peer-focus:text-base text-xs -top-5 transition-all peer-focus:text-yellow-700"
                           >
                             {lang === "es"
                               ? "Dirección de recogida"
@@ -521,11 +519,11 @@ function QuotationForm({
                             type="text"
                             id="deliveryAddress"
                             {...register("deliveryAddress")}
-                            className="w-full border-b border-gray-300 py-1 focus:border-b-2 focus:border-green-700 transition-colors focus:outline-none peer bg-inherit"
+                            className="w-full border-b border-gray-300 py-1 focus:border-b-2 focus:border-yellow-700 transition-colors focus:outline-none peer bg-inherit"
                           />
                           <label
                             htmlFor="deliveryAddress"
-                            className="absolute left-0 cursor-text peer-focus:text-base text-xs -top-5 transition-all peer-focus:text-green-700"
+                            className="absolute left-0 cursor-text peer-focus:text-base text-xs -top-5 transition-all peer-focus:text-yellow-700"
                           >
                             {lang === "es"
                               ? "Dirección de entrega"
@@ -544,11 +542,11 @@ function QuotationForm({
                             type="date"
                             id="pickupDate"
                             {...register("pickupDate")}
-                            className="w-full border-b border-gray-300 py-1 focus:border-b-2 focus:border-green-700 transition-colors focus:outline-none peer bg-inherit"
+                            className="w-full border-b border-gray-300 py-1 focus:border-b-2 focus:border-yellow-700 transition-colors focus:outline-none peer bg-inherit"
                           />
                           <label
                             htmlFor="pickupDate"
-                            className="absolute left-0 cursor-text peer-focus:text-base text-xs -top-5 transition-all peer-focus:text-green-700"
+                            className="absolute left-0 cursor-text peer-focus:text-base text-xs -top-5 transition-all peer-focus:text-yellow-700"
                           >
                             {lang === "es"
                               ? "Fecha de recogida"
@@ -567,11 +565,11 @@ function QuotationForm({
                             type="date"
                             id="deliveryDate"
                             {...register("deliveryDate")}
-                            className="w-full border-b border-gray-300 py-1 focus:border-b-2 focus:border-green-700 transition-colors focus:outline-none peer bg-inherit"
+                            className="w-full border-b border-gray-300 py-1 focus:border-b-2 focus:border-yellow-700 transition-colors focus:outline-none peer bg-inherit"
                           />
                           <label
                             htmlFor="deliveryDate"
-                            className="absolute left-0 cursor-text peer-focus:text-base text-xs -top-5 transition-all peer-focus:text-green-700"
+                            className="absolute left-0 cursor-text peer-focus:text-base text-xs -top-5 transition-all peer-focus:text-yellow-700"
                           >
                             {lang === "es"
                               ? "Fecha de entrega"
@@ -595,7 +593,7 @@ function QuotationForm({
                           <select
                             id="paymentMethod"
                             {...register("paymentMethod")}
-                            className="w-full border-b border-gray-300 py-1 focus:border-b-2 focus:border-green-700 transition-colors focus:outline-none peer bg-inherit"
+                            className="w-full border-b border-gray-300 py-1 focus:border-b-2 focus:border-yellow-700 transition-colors focus:outline-none peer bg-inherit"
                           >
                             <option value="creditCard">
                               {lang === "es"
@@ -613,7 +611,7 @@ function QuotationForm({
                           </select>
                           <label
                             htmlFor="paymentMethod"
-                            className="absolute left-0 cursor-text peer-focus:text-base text-xs -top-5 transition-all peer-focus:text-green-700"
+                            className="absolute left-0 cursor-text peer-focus:text-base text-xs -top-5 transition-all peer-focus:text-yellow-700"
                           >
                             {lang === "es"
                               ? "Método de pago"
@@ -632,11 +630,11 @@ function QuotationForm({
                             id="comments"
                             {...register("comments")}
                             rows={3}
-                            className="w-full border-b border-gray-300 py-1 focus:border-b-2 focus:border-green-700 transition-colors focus:outline-none peer bg-inherit"
+                            className="w-full border-b border-gray-300 py-1 focus:border-b-2 focus:border-yellow-700 transition-colors focus:outline-none peer bg-inherit"
                           />
                           <label
                             htmlFor="comments"
-                            className="absolute left-0 cursor-text peer-focus:text-base text-xs -top-5 transition-all peer-focus:text-green-700"
+                            className="absolute left-0 cursor-text peer-focus:text-base text-xs -top-5 transition-all peer-focus:text-yellow-700"
                           >
                             {lang === "es" ? "Comentarios" : "Comments"}
                           </label>
@@ -653,7 +651,7 @@ function QuotationForm({
                           <i className="absolute right-5">X</i>
                         </button>
                         <button
-                          className={`${imageColor} disabled:grayscale-0 flex justify-center items-center relative py-2 px-5 pr-14 md:py-3 rounded-full rounded-tl-none mb-4 hover:shadow-lg hover:shadow-green-900 transition-all md:self-end md:w-fit`}
+                          className={`${imageColor} disabled:grayscale-0 flex justify-center items-center relative py-2 px-5 pr-14 md:py-3 rounded-full rounded-tl-none mb-4 hover:shadow-lg hover:shadow-yellow-900 transition-all md:self-end md:w-fit`}
                           type="submit"
                           disabled={isLoading}
                         >
@@ -664,8 +662,8 @@ function QuotationForm({
                         </button>
                       </div>
                     </div>
-                    <div className="h-2 w-full bg-gradient-to-l via-green-500 group-hover:blur-xl blur-2xl m-auto rounded transition-all absolute bottom-0"></div>
-                    <div className="h-0.5 group-hover:w-full bg-gradient-to-l via-green-950 group-hover:via-green-500 w-7/10 m-auto rounded transition-all"></div>
+                    <div className="h-2 w-full bg-gradient-to-l via-yellow-500 group-hover:blur-xl blur-2xl m-auto rounded transition-all absolute bottom-0"></div>
+                    <div className="h-0.5 group-hover:w-full bg-gradient-to-l via-yellow-950 group-hover:via-yellow-500 w-7/10 m-auto rounded transition-all"></div>
                   </form>
                   <ToastContainer />
                 </Dialog.Panel>

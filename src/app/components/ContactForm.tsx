@@ -110,22 +110,22 @@ function ContactForm({ imageColor }: { imageColor: string }) {
         className={clsx(
           "card m-auto text-gray-300 w-clamp h-auto hover:brightness-90 transition-all duration-300 ease-in-out group bg-gradient-to-tl rounded-lg overflow-hidden relative",
           {
-            "dark-theme from-darkBackground to-[#100f06] hover:from-[#200f06] hover:to-#300f06 border-gray-900":
+            "dark-theme from-darkBackground to-[#100f06] hover:from-[#200f06] border border-gray-900":
               theme === "dark",
-            "light-theme from-lightBackground to-lightBackground hover:from-[#edffed] hover:to-[#ecffed] border border-gray-100":
+            "light-theme from-lightBackground to-lightBackground hover:from-[#edffed] border border-gray-100":
               theme === "light",
           }
         )}
       >
         {isLoading && <Loader />}
         <div className="flex flex-col gap-8 px-8 py-10">
-          <header className="w-[60%] md:w-[57%] flex items-center justify-between">
+          <header className="w-full flex items-center justify-center mb-5">
             <i
-              className={`${imageColor} p-2 w-fit rounded-xl rounded-tl-none mb-4 group-hover:-translate-y-1 group-hover:shadow-xl group-hover:shadow-yellow-900 transition-all`}
+              className={`${imageColor} absolute top-5 left-5 p-2 w-fit rounded-xl rounded-tl-none mb-4 group-hover:-translate-y-1 group-hover:shadow-xl group-hover:shadow-yellow-900 transition-all`}
             >
               <EmailIcon className="h-6 w-6 md:w-8 md:h-8" />
             </i>
-            <h3 className="text-lg md-xl font-extrabold">
+            <h3 className="text-base md-lg font-extrabold">
               {lang === "es" ? "Contáctanos" : "Contact us"}
             </h3>
           </header>

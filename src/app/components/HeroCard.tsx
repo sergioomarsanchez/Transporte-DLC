@@ -41,7 +41,7 @@ function HeroCard() {
         <QuotationForm
           isOpen={isOpen}
           setIsOpen={setIsOpen}
-          imageColor={theme === "dark" ? "bg-green-300" : "bg-green-700"}
+          imageColor={theme === "dark" ? "bg-yellow-700" : "bg-yellow-300"}
         />
         <button className="px-4 py-2 font-semibold border-[1px] border-yellow-400 bg-transparent rounded-full hover:bg-yellow-600 hover:scale-[102%] transition-all delay-200 active:scale-[98%]">
           Llamar
