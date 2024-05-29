@@ -5,6 +5,7 @@ import Image from "next/image";
 import heroImg from "@/app/assests/img/heroImg.jpeg";
 import clsx from "clsx";
 import QuotationForm from "./QuotationForm";
+import CallIcon from "../assests/icons/CallIcon";
 
 function HeroCard() {
   const { theme } = useContext(ThemeContext);
@@ -43,8 +44,17 @@ function HeroCard() {
           setIsOpen={setIsOpen}
           imageColor={theme === "dark" ? "bg-yellow-700" : "bg-yellow-300"}
         />
-        <button className="px-4 py-2 font-semibold border-[1px] border-yellow-400 bg-transparent rounded-full hover:bg-yellow-600 hover:scale-[102%] transition-all delay-200 active:scale-[98%]">
-          Llamar
+        <button
+          className={`bg-transparent disabled:grayscale-1 flex justify-center items-center relative py-2 px-5 pr-12 md:py-3 rounded-full rounded-tl-none mb-4 hover:shadow-lg transition-all md:self-end md:w-fit border ${
+            theme === "dark"
+              ? "border-gray-500 hover:shadow-gray-500"
+              : "border-blue-900 hover:shadow-blue-900"
+          }`}
+        >
+          <a href="tel:+5493516137695">{lang === "es" ? "Llamar" : "Call"}</a>
+          <i className="absolute right-2">
+            <CallIcon className="h-6 w-6 brightness-[90%] " />
+          </i>
         </button>
       </div>
     </div>

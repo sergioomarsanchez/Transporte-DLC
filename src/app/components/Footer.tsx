@@ -63,14 +63,16 @@ function Footer() {
             >
               <SocialMedia footerVisible={footerVisible} />
             </div>
-            <a
-              href={"mailto:transportedimotta@gmail.com"}
-              target="_blank"
-              rel="noreferrer"
-              className="anchor"
-            >
-              transportedimotta@gmail.com
-            </a>
+            <div className="flex justify-center items-center w-full">
+              <a
+                href={"mailto:transportedimotta@gmail.com"}
+                target="_blank"
+                rel="noreferrer"
+                className="anchor"
+              >
+                transportedimotta@gmail.com
+              </a>
+            </div>
           </section>
           <nav className="flex justify-center items-center ">
             <ul className="grid gap-3 grid-cols-3 w-full mt-5 lg:mt-0 lg:justify-start lg:w-fit px-5 text-xs md:grid-cols-2 lg:grid-cols-1">
@@ -80,7 +82,10 @@ function Footer() {
                     key={element.en}
                     className={`w-full flex items-start justify-start py-[0.2px] cursor-pointer whitespace-nowrap`}
                   >
-                    <a href={element.href}>
+                    <a
+                      href={element.href}
+                      className="hover:underline hover:text-blue-300"
+                    >
                       {lang === "es" ? element.es : element.en}
                     </a>
                   </li>

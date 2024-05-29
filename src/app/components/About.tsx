@@ -21,7 +21,7 @@ function About() {
     } else {
       controls.start("hidden");
     }
-  }, [controls, inView]);
+  }, [controls, inView, lang]);
 
   const variants = {
     hidden: { opacity: 0, y: 50 },

@@ -11,6 +11,7 @@ import { ToastContainer, toast } from "react-toastify";
 import EmailIcon from "../assests/icons/EmailIcon";
 import SendIcon from "../assests/icons/SendIcon";
 import Loader from "./Loader/Loader";
+import QuotationIcon from "../assests/icons/QuotationIcon";
 
 function QuotationForm({
   isOpen,
@@ -229,9 +230,12 @@ function QuotationForm({
   return (
     <>
       <button
-        className="px-4 py-2 font-semibold rounded-full hover:bg-yellow-600 bg-yellow-400 hover:scale-[102%] text-black transition-all delay-200 active:scale-[98%]"
+        className={`${imageColor} disabled:grayscale-1 flex justify-center items-center relative py-2 px-5 pr-12 md:py-3 rounded-full rounded-tl-none mb-4 hover:shadow-lg hover:shadow-yellow-900 transition-all md:self-end md:w-fit`}
         onClick={handleOpenModal}
       >
+        <i className="absolute right-2">
+        <QuotationIcon className="h-6 w-6 brightness-[90%]" />
+        </i>
         {lang === "es" ? "Cotizar" : "Quotation"}
       </button>
       <Transition appear show={isOpen} as={Fragment}>
@@ -642,7 +646,7 @@ function QuotationForm({
                       </div>
                       <div className="flex gap-2 justify-between items-center md:justify-end">
                         <button
-                          className={`bg-red-500 disabled:grayscale-0 flex justify-center items-center relative py-2 px-5 pr-10 md:py-3 rounded-full rounded-tl-none mb-4 hover:shadow-lg hover:shadow-red-900 transition-all md:self-end md:w-fit`}
+                          className={`bg-red-500 disabled:grayscale-1 flex justify-center items-center relative py-2 px-5 pr-10 md:py-3 rounded-full rounded-tl-none mb-4 hover:shadow-lg hover:shadow-red-900 transition-all md:self-end md:w-fit`}
                           onClick={() => handleCloseModal()}
                           disabled={isLoading}
                           type="button"
@@ -651,7 +655,7 @@ function QuotationForm({
                           <i className="absolute right-5">X</i>
                         </button>
                         <button
-                          className={`${imageColor} disabled:grayscale-0 flex justify-center items-center relative py-2 px-5 pr-14 md:py-3 rounded-full rounded-tl-none mb-4 hover:shadow-lg hover:shadow-yellow-900 transition-all md:self-end md:w-fit`}
+                          className={`${imageColor} disabled:grayscale-1 flex justify-center items-center relative py-2 px-5 pr-14 md:py-3 rounded-full rounded-tl-none mb-4 hover:shadow-lg hover:shadow-yellow-900 transition-all md:self-end md:w-fit`}
                           type="submit"
                           disabled={isLoading}
                         >
