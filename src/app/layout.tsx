@@ -34,6 +34,7 @@ export const metadata: Metadata = {
     icon: "./Small-black.png",
     apple: "./Small-black.png",
   },
+  viewport:"width=device-width, initial-scale=1",
   openGraph: {
     type: "website",
     //TODO:Change url once in production.

@@ -268,7 +268,7 @@ function QuotationForm({
           >
             <div className="fixed inset-0 bg-black opacity-[0.4]" />
           </Transition.Child>
-          <div className="fixed flex justify-center items-center inset-0 z-20 h-fit">
+          <div className="fixed flex justify-center items-center inset-0 overflow-auto z-20 h-fit">
             <div
               className={`absolute top-20  z-20 w-[95%] md:w-[90%] lg:w-[85%] xl:w-[80%] h-fit border-[0.5px] rounded-lg flex flex-col items-center border-yellow-600 ${
                 theme === "dark"
@@ -285,7 +285,7 @@ function QuotationForm({
                 leaveFrom="opacity-100 scale-100"
                 leaveTo="opacity-0 scale-95"
               >
-                <Dialog.Panel className="w-full h-full gap-2 flex flex-col items-center justify-evenly md:px-5 py-5">
+                <Dialog.Panel className="w-full h-fit gap-2 flex flex-col items-center justify-evenly md:px-5 py-5">
                   {/* <div className="p-2 md:px-24">
                     <FrontTruck
                       className="h-8 w-8"

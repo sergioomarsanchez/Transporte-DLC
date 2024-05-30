@@ -61,7 +61,7 @@ function MobileNav({
                 leaveFrom="opacity-100 scale-100"
                 leaveTo="opacity-0 scale-95"
               >
-                <Dialog.Panel className="w-full h-full gap-2 flex flex-col items-center justify-evenly py-5">
+                <Dialog.Panel className="w-full gap-2 flex flex-col items-center overflow-auto h-fit justify-evenly py-5">
                   <div className="flex absolute top-4 right-4 items-center justify-around transition-none">
                     <ToggleTheme />
                     <ToggleLang />
