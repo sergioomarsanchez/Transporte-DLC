@@ -237,7 +237,7 @@ function QuotationForm({
       >
         <i
           className={clsx("", {
-            "fixed right-6 bottom-28 group flex items-center justify-center font-semibold transition-all":
+            "fixed right-6 bottom-28 group flex items-center justify-center font-semibold transition-all z-20":
               !heroVisible,
             "absolute right-2": heroVisible,
           })}

@@ -80,7 +80,7 @@ function HeroCard() {
             </span>
             <i
               className={clsx("", {
-                "fixed right-6 bottom-16": !heroVisible,
+                "fixed right-6 bottom-16 z-20": !heroVisible,
                 "absolute -right-10": heroVisible,
               })}
             >
