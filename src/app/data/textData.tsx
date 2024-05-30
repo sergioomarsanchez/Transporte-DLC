@@ -61,7 +61,7 @@ export const aboutText = {
     ],
   },
   en: {
-    title: "Sobre Nosotros",
+    title: "About Us",
     description:
       "Lorem ipsum dolor sit amet consectetur adipiscing elit volutpat, lacinia proin a quisque imperdiet himenaeos donec, mi massa risus morbi vitae neque sodales. Pellentesque pretium tincidunt id tellus lacinia vulputate interdum eros euismod etiam, mi mollis luctus odio in quam mus metus platea rutrum, sodales et hac felis dis nunc sociis sollicitudin primis. Hendrerit quis mi tortor sollicitudin curabitur aptent ante lacus in sed egestas, porttitor eu dignissim senectus taciti cum justo mattis aliquam nunc. Aenean odio himenaeos fames proin, elementum ante dignissim lacus semper, habitasse accumsan iaculis. Tempus morbi a ultricies dictum vel, pulvinar facilisi viverra sodales, ut quis cum massa. Placerat montes quisque vestibulum nullam augue primis cum curabitur, odio scelerisque taciti justo ut libero dapibus parturient in, platea nibh etiam vitae tristique turpis nulla.",
     history:

@@ -3,7 +3,7 @@ import React, { createContext, useState, useEffect } from "react";
 import type { Lang } from "../types";
 
 const LangContext = createContext({
-  lang: "en",
+  lang: "es",
   toggleLang: () => {},
 });
 
