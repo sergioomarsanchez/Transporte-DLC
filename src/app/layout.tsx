@@ -10,7 +10,7 @@ import "react-toastify/dist/ReactToastify.css";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("http://localhost:3000/"),
+  metadataBase: new URL("https://transporte-dlc.vercel.app/"),
   title: "Transporte DLC Concepción del Uruguay E.R.",
   description:
     "Transporte confiable y eficiente de carga por tierra desde Concepción del Uruguay hacia cualquier destino en Argentina.",
