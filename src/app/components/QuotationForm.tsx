@@ -2,6 +2,7 @@ import React, { Dispatch, useContext, Fragment, useState } from "react";
 import { Dialog, Transition } from "@headlessui/react";
 import { ThemeContext } from "@/app/context/themeContext";
 import { LangContext } from "@/app/context/langContext";
+import FrontTruck from "@/app/assests/icons/FrontTruck";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { SubmitHandler, useForm } from "react-hook-form";
@@ -171,6 +172,7 @@ function QuotationForm({
           }
         );
         reset();
+        setIsOpen(false);
       } else {
         toast.error(
           lang === "es"
@@ -206,7 +208,6 @@ function QuotationForm({
       );
     } finally {
       setIsLoading(false);
-      setIsOpen(false);
     }
   };
 
@@ -268,9 +269,9 @@ function QuotationForm({
           >
             <div className="fixed inset-0 bg-black opacity-[0.4]" />
           </Transition.Child>
-          <div className="fixed flex justify-center items-center inset-0 overflow-auto z-20 h-fit">
+          <div className="fixed flex justify-center items-center inset-0 overflow-y-auto z-20">
             <div
-              className={`absolute top-20  z-20 w-[95%] md:w-[90%] lg:w-[85%] xl:w-[80%] h-fit border-[0.5px] rounded-lg flex flex-col items-center border-yellow-600 ${
+              className={`absolute top-20 z-20 w-[95%] md:w-[90%] lg:w-[85%] xl:w-[80%] h-fit border-[0.5px] rounded-lg flex flex-col items-center border-yellow-600 ${
                 theme === "dark"
                   ? "from-yellow-700 to-yellow-900 to-70% bg-gradient-to-br"
                   : "from-yellow-400 to-yellow-600 to-70% bg-gradient-to-br"
@@ -285,7 +286,7 @@ function QuotationForm({
                 leaveFrom="opacity-100 scale-100"
                 leaveTo="opacity-0 scale-95"
               >
-                <Dialog.Panel className="w-full h-fit gap-2 flex flex-col items-center justify-evenly md:px-5 py-5">
+                <Dialog.Panel className="w-full gap-2 flex flex-col items-center overflow-auto h-fit justify-evenly md:px-5 py-5">
                   {/* <div className="p-2 md:px-24">
                     <FrontTruck
                       className="h-8 w-8"
@@ -294,7 +295,7 @@ function QuotationForm({
                   </div> */}
                   <Dialog.Title
                     className={`${
-                      theme === "dark" ? "text-gray-400" : "text-gray-900"
+                      theme === "dark" ? "text-white" : "text-gray-900"
                     } font-bold text-lg lg:text-xl pt-5`}
                   >
                     {lang === "es" ? "Cotizar" : "Quotation"}

@@ -44,7 +44,6 @@ function FleetSlider() {
           <Image
             src={images[index]}
             alt={`Truck ${index + 1}`}
-            layout="responsive"
             className="max-h-screen mt-5"
           />
         </motion.div>

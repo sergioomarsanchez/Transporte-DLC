@@ -6,6 +6,12 @@ import About from "./components/About";
 import Service from "./components/Service";
 import ContactForm from "./components/ContactForm";
 import FleetSection from "./components/FleetSection";
+import type { Viewport } from "next";
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+};
 
 export default function Home() {
   const { theme } = useContext(ThemeContext);
