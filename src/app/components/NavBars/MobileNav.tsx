@@ -44,7 +44,7 @@ function MobileNav({
           >
             <div className="fixed inset-0 bg-black opacity-[0.4]" />
           </Transition.Child>
-          <div className="fixed inset-0 overflow-y-auto z-20">
+          <div className="fixed inset-0 h-fit z-20">
             <div
               className={`absolute top-10 right-5 z-20 w-[70%] h-fit border-[0.5px] rounded-lg flex flex-col items-center border-yellow-600 opacity-[95%] ${
                 theme === "dark"

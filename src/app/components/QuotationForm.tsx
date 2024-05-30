@@ -2,7 +2,6 @@ import React, { Dispatch, useContext, Fragment, useState } from "react";
 import { Dialog, Transition } from "@headlessui/react";
 import { ThemeContext } from "@/app/context/themeContext";
 import { LangContext } from "@/app/context/langContext";
-import FrontTruck from "@/app/assests/icons/FrontTruck";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { SubmitHandler, useForm } from "react-hook-form";
@@ -172,7 +171,6 @@ function QuotationForm({
           }
         );
         reset();
-        setIsOpen(false);
       } else {
         toast.error(
           lang === "es"
@@ -208,6 +206,7 @@ function QuotationForm({
       );
     } finally {
       setIsLoading(false);
+      setIsOpen(false);
     }
   };
 
@@ -269,7 +268,7 @@ function QuotationForm({
           >
             <div className="fixed inset-0 bg-black opacity-[0.4]" />
           </Transition.Child>
-          <div className="fixed flex justify-center items-center inset-0 overflow-y-auto z-20">
+          <div className="fixed flex justify-center items-center inset-0 z-20 h-fit">
             <div
               className={`absolute top-20  z-20 w-[95%] md:w-[90%] lg:w-[85%] xl:w-[80%] h-fit border-[0.5px] rounded-lg flex flex-col items-center border-yellow-600 ${
                 theme === "dark"
@@ -687,10 +686,10 @@ function QuotationForm({
                     <div className="h-2 w-full bg-gradient-to-l via-yellow-500 group-hover:blur-xl blur-2xl m-auto rounded transition-all absolute bottom-0"></div>
                     <div className="h-0.5 group-hover:w-full bg-gradient-to-l via-yellow-950 group-hover:via-yellow-500 w-7/10 m-auto rounded transition-all"></div>
                   </form>
-                  <ToastContainer />
                 </Dialog.Panel>
               </Transition.Child>
             </div>
+            <ToastContainer />
           </div>
         </Dialog>
       </Transition>
