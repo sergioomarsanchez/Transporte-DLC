@@ -15,10 +15,12 @@ import QuotationIcon from "../assests/icons/QuotationIcon";
 
 function QuotationForm({
   isOpen,
+  heroVisible,
   setIsOpen,
   imageColor,
 }: {
   isOpen: boolean;
+  heroVisible: boolean;
   setIsOpen: Dispatch<boolean>;
   imageColor: string;
 }) {
@@ -230,13 +232,29 @@ function QuotationForm({
   return (
     <>
       <button
-        className={`${imageColor} disabled:grayscale-1 flex justify-center items-center relative py-2 px-5 pr-12 md:py-3 rounded-full rounded-tl-none mb-4 hover:shadow-lg hover:shadow-yellow-900 transition-all md:self-end md:w-fit`}
+        className={`${imageColor} flex justify-center items-center relative py-2 px-5 pr-12 rounded-full rounded-tl-none mb-4 hover:shadow-lg hover:shadow-yellow-900 transition-all md:self-end md:w-fit`}
         onClick={handleOpenModal}
       >
-        <i className="absolute right-2">
-        <QuotationIcon className="h-6 w-6 brightness-[90%]" />
+        <i
+          className={clsx("", {
+            "fixed right-6 bottom-28 group flex items-center justify-center font-semibold transition-all":
+              !heroVisible,
+            "absolute right-2": heroVisible,
+          })}
+        >
+          <QuotationIcon
+            className={clsx("brightness-[90%]", {
+              "h-9 w-9": !heroVisible,
+              "h-6 w-6": heroVisible,
+            })}
+          />
+          {!heroVisible && (
+            <span className="absolute whitespace-nowrap opacity-0 group-hover:opacity-100 group-hover:text-xs group-hover:-translate-y-8 duration-700">
+              {lang === "es" ? "Cotizar" : "Quotation"}
+            </span>
+          )}
         </i>
-        {lang === "es" ? "Cotizar" : "Quotation"}
+        <span>{lang === "es" ? "Cotizar" : "Quotation"}</span>
       </button>
       <Transition appear show={isOpen} as={Fragment}>
         <Dialog as="div" open={isOpen} onClose={() => handleCloseModal()}>

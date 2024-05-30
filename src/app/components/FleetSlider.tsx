@@ -30,7 +30,7 @@ function FleetSlider() {
           </h3>
           <p>
             {lang === "es"
-              ? "Contamos con una flota de camiones altamente equipados y listos paramanejar diferentes tipos de carga."
+              ? "Contamos con una flota de camiones altamente equipados y listos para manejar diferentes tipos de carga."
               : "We have a fleet of highly equipped trucks ready to handle different types of cargo."}
           </p>
         </div>

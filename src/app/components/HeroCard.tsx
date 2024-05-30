@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useRef, useState } from "react";
 import { ThemeContext } from "../context/themeContext";
 import { LangContext } from "../context/langContext";
 import Image from "next/image";
@@ -11,6 +11,21 @@ function HeroCard() {
   const { theme } = useContext(ThemeContext);
   const { lang } = useContext(LangContext);
   const [isOpen, setIsOpen] = useState(false);
+  const [heroVisible, setHeroVisible] = useState(false);
+  const heroRef = useRef(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver((entries) => {
+      const entry = entries[0];
+      setHeroVisible(entry.isIntersecting);
+    });
+
+    if (heroRef.current) {
+      observer.observe(heroRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, [heroRef]);
   return (
     <div
       className={clsx(
@@ -38,23 +53,45 @@ function HeroCard() {
           eiusmod tempor incididunt ut labore et dolore magna aliqua.{" "}
         </p>
       </div>
-      <div className="flex gap-2 justify-center items-center w-fit h-fit text-sm md:text-base">
+      <div
+        ref={heroRef}
+        className="flex gap-2 justify-center items-center w-fit h-fit text-sm md:text-base"
+      >
         <QuotationForm
+          heroVisible={heroVisible}
           isOpen={isOpen}
           setIsOpen={setIsOpen}
           imageColor={theme === "dark" ? "bg-yellow-700" : "bg-yellow-300"}
         />
         <button
-          className={`bg-transparent disabled:grayscale-1 flex justify-center items-center relative py-2 px-5 pr-12 md:py-3 rounded-full rounded-tl-none mb-4 hover:shadow-lg transition-all md:self-end md:w-fit border ${
+          className={`bg-transparent disabled:grayscale-1 flex justify-center items-center py-2 px-5 pr-12 rounded-full rounded-tl-none mb-4 hover:shadow-lg transition-all md:self-end md:w-fit border ${
             theme === "dark"
               ? "border-gray-500 hover:shadow-gray-500"
               : "border-blue-900 hover:shadow-blue-900"
           }`}
         >
-          <a href="tel:+5493516137695">{lang === "es" ? "Llamar" : "Call"}</a>
-          <i className="absolute right-2">
-            <CallIcon className="h-6 w-6 brightness-[90%] " />
-          </i>
+          <a href="tel:+5493516137695" className="w-full relative">
+            <span
+              className={clsx("", {
+                hidden: !heroVisible,
+              })}
+            >
+              {lang === "es" ? "Llamar" : "Call"}
+            </span>
+            <i
+              className={clsx("", {
+                "fixed right-6 bottom-16": !heroVisible,
+                "absolute -right-10": heroVisible,
+              })}
+            >
+              <CallIcon
+                className={clsx("brightness-[90%] ", {
+                  "h-9 w-9 hover:brightness-105 transition-all delay-200": !heroVisible,
+                  "h-6 w-6": heroVisible,
+                })}
+              />
+            </i>
+          </a>
         </button>
       </div>
     </div>
