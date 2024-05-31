@@ -21,14 +21,14 @@ function FleetSection() {
               ? "Día y Noche trabajamos para ofrecer el mejor servicio de transporte"
               : "Day and Night we work to offer the best transport service"}
           </p>
-          <div className="flex gap-2 justify-center items-center w-fit h-fit">
+          {/* <div className="flex gap-2 justify-center items-center w-fit h-fit">
             <button className="px-4 py-2 font-semibold rounded-full hover:bg-yellow-600 bg-yellow-400 hover:scale-[102%] text-black transition-all delay-200 active:scale-[98%]">
               Cotizar
             </button>
             <button className="px-4 py-2 font-semibold border-[1px] border-yellow-400 bg-transparent rounded-full hover:bg-yellow-600 hover:scale-[102%] transition-all delay-200 active:scale-[98%]">
               Llamar
             </button>
-          </div>
+          </div> */}
         </section>
         <section className="flex flex-col -mb-32">
           <Image

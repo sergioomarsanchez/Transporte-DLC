@@ -1,7 +1,7 @@
 import { useState, useEffect, useContext } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import img1 from "@/app/assests/img/LoadedBySide2.jpeg"; // replace with your image paths
+import img1 from "@/app/assests/img/LoadedBySide2.jpeg";
 import img2 from "@/app/assests/img/LoadedBySide.jpeg";
 import img3 from "@/app/assests/img/Loaded.jpeg";
 import img4 from "@/app/assests/img/Loaded2.jpeg";
@@ -28,7 +28,7 @@ function FleetSlider() {
           <h3 className="text-xl md:text-2xl font-extrabold italic my-10">
             {lang === "es" ? "Galería" : "Gallery"}
           </h3>
-          <p>
+          <p className="my-2 md:my-5 text-xs md:text-base">
             {lang === "es"
               ? "Contamos con una flota de camiones altamente equipados y listos para manejar diferentes tipos de carga."
               : "We have a fleet of highly equipped trucks ready to handle different types of cargo."}
