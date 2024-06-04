@@ -1,5 +1,5 @@
 import React, { Dispatch, useContext, Fragment } from "react";
-import { Bars3Icon } from "@heroicons/react/16/solid";
+import { Bars3Icon } from "@heroicons/react/24/solid";
 import { Dialog, Transition } from "@headlessui/react";
 import { ThemeContext } from "@/app/context/themeContext";
 import { LangContext } from "@/app/context/langContext";
@@ -21,6 +21,12 @@ function MobileNav({
     e.preventDefault();
     setIsOpen(true);
   };
+
+  const bgGradient =
+    theme === "dark"
+      ? "linear-gradient(167deg, rgba(8,7,1,0.3) 1%, rgba(143,115,2,0.3) 98%)"
+      : "linear-gradient(167deg, rgba(255,254,235,0.3) 1%, rgba(255,208,18,0.3) 98%)";
+
   return (
     <>
       {!isOpen && (
@@ -46,11 +52,10 @@ function MobileNav({
           </Transition.Child>
           <div className="fixed inset-0 h-fit z-20">
             <div
-              className={`absolute top-10 right-5 z-20 w-[70%] h-fit border-[0.5px] rounded-lg flex flex-col items-center border-yellow-600 opacity-[95%] ${
-                theme === "dark"
-                  ? "from-yellow-700 to-yellow-900 to-70% bg-gradient-to-br"
-                  : "from-yellow-400 to-yellow-600 to-70% bg-gradient-to-br"
-              }`}
+              className={`absolute top-10 right-5 z-20 w-[70%] h-fit border-[0.5px] rounded-lg flex flex-col items-center border-yellow-600 backdrop-blur-xl`}
+              style={{
+                backgroundImage: bgGradient,
+              }}
             >
               <Transition.Child
                 as={Fragment}
