@@ -39,7 +39,7 @@ function ValueCard({
   }
   return (
     <div
-      className={`h-[200px] md:h-[300px] flex flex-col p-5 border-[0.5px] rounded-lg ${
+      className={`h-[200px] md:h-[300px] max-w-[300px] flex flex-col p-5 border-[0.5px] rounded-lg ${
         theme === "dark" ? "border-yellow-100" : "border-yellow-800"
       }`}
     >

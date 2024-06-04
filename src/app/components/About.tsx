@@ -46,7 +46,7 @@ function About() {
         animate={controls}
         variants={variants}
         transition={{ duration: 1 }}
-        className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 justify-center items-center gap-2 h-fit w-fit"
+        className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 justify-center items-center gap-2 h-fit w-full"
       >
         {dataLang?.values?.map((value, index) => {
           return (

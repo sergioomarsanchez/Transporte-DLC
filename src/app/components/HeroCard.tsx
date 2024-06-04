@@ -29,10 +29,11 @@ function HeroCard() {
   return (
     <div
       className={clsx(
-        "group p-10 pt-4 bg-gradient-to-br bg-opacity-30 from-[1%] to-[100%] lg:pt-10 flex flex-col justify-start items-start gap-2 w-[90%] h-[25rem] duration-500 relative rounded-lg p-4hover:-translate-y-2 hover:shadow-xl",
+        "p-10 pt-4 mb-20 bg-gradient-to-br bg-opacity-30 from-[1%] to-[100%] lg:pt-10 flex flex-col justify-start items-start gap-2 w-[100%] h-[25rem] duration-500 relative rounded-lg",
         {
           "from-yellow-900 to-darkBackground": theme === "dark",
           "from-yellow-200 to-lightBackground": theme === "light",
+          "group hover:-translate-y-2 hover:shadow-xl": heroVisible,
         }
       )}
     >
@@ -41,21 +42,27 @@ function HeroCard() {
         alt="Freight truck parked on a wet road with a rainbow in the sky after a storm."
         width={400}
         height={400}
-        className="absolute duration-700 shadow-md group-hover:-translate-y-4 group-hover:-translate-x-4 -bottom-8 md:-bottom-16 md:scale-75 lg:scale-100 lg:-bottom-2 -right-10 rounded-lg"
+        className={clsx(
+          "absolute w-[90%] sm:max-w-[500px] md:w-[40%] duration-700 shadow-md -bottom-20 md:-bottom-16 lg:scale-100 lg:-bottom-2 right-5 md:-right-10 rounded-lg",
+          {
+            "md:group-hover:-translate-y-4 md:group-hover:-translate-x-4":
+              heroVisible,
+          }
+        )}
       />
 
-      <div className="h-fit">
+      <div className="h-fit flex flex-col justify-center items-center md:justify-start md:items-start">
         <h1 className="font-extrabold font-serif text-2xl md:text-3xl text-yellow-600">
           Transporte DLC
         </h1>
-        <p className="my-2 md:my-5 text-xs md:text-base md:w-[60%]">
+        <p className="my-2 md:my-5 text-xs md:text-base md:w-[60%] text-center md:text-left">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
           eiusmod tempor incididunt ut labore et dolore magna aliqua.{" "}
         </p>
       </div>
       <div
         ref={heroRef}
-        className="flex gap-2 justify-center items-center w-fit h-fit text-sm md:text-base"
+        className="flex gap-2 justify-center items-center w-full md:w-fit h-fit text-sm md:text-base"
       >
         <QuotationForm
           heroVisible={heroVisible}
@@ -86,7 +93,8 @@ function HeroCard() {
             >
               <CallIcon
                 className={clsx("brightness-[90%] ", {
-                  "h-9 w-9 hover:brightness-105 transition-all delay-200": !heroVisible,
+                  "h-9 w-9 hover:brightness-105 transition-all delay-200":
+                    !heroVisible,
                   "h-6 w-6": heroVisible,
                 })}
               />
