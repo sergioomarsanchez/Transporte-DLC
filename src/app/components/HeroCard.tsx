@@ -29,7 +29,7 @@ function HeroCard() {
   return (
     <div
       className={clsx(
-        "p-10 pt-4 mb-20 bg-gradient-to-br bg-opacity-30 from-[1%] to-[100%] lg:pt-10 flex flex-col justify-start items-start gap-2 w-[100%] h-[25rem] duration-500 relative rounded-lg",
+        "relative p-10 pt-4 mb-20 bg-gradient-to-br bg-opacity-30 from-[1%] to-[100%] lg:pt-10 flex flex-col justify-start items-start gap-2 w-[100%] h-[25rem] duration-500 rounded-lg",
         {
           "from-yellow-900 to-darkBackground": theme === "dark",
           "from-yellow-200 to-lightBackground": theme === "light",
@@ -42,16 +42,14 @@ function HeroCard() {
         alt="Freight truck parked on a wet road with a rainbow in the sky after a storm."
         width={400}
         height={400}
-        className={clsx(
-          "absolute w-[90%] sm:max-w-[500px] md:w-[40%] duration-700 shadow-md -bottom-20 md:-bottom-16 lg:scale-100 lg:-bottom-2 right-5 md:-right-10 rounded-lg",
-          {
-            "md:group-hover:-translate-y-4 md:group-hover:-translate-x-4":
-              heroVisible,
-          }
-        )}
+        className="absolute w-[90%] sm:max-w-[500px] md:w-[40%] duration-700 shadow-md lg:scale-100 -bottom-20 rounded-lg md:group-hover:-translate-y-4 md:group-hover:-translate-x-4 md:-bottom-16 right-4 md:-right-10 lg:-bottom-2"
       />
 
-      <div className="h-fit flex flex-col justify-center items-center md:justify-start md:items-start">
+      <div
+        className={
+          "h-fit flex flex-col justify-center items-center md:justify-start md:items-start"
+        }
+      >
         <h1 className="font-extrabold font-serif text-2xl md:text-3xl text-yellow-600">
           Transporte DLC
         </h1>
