@@ -60,7 +60,7 @@ function HeroCard() {
       </div>
       <div
         ref={heroRef}
-        className="flex gap-2 justify-center items-center w-full md:w-fit h-fit text-sm md:text-base"
+        className="flex gap-2 justify-center items-center w-full md:w-fit  text-sm md:text-base"
       >
         <QuotationForm
           heroVisible={heroVisible}
